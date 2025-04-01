@@ -1,12 +1,10 @@
 import argparse
-from datetime import datetime,timedelta
 from fastapi import FastAPI, HTTPException
 import uvicorn
 import yfinance as yf
-import pandas as pd
-from typing import List, Dict
 from fastapi.encoders import jsonable_encoder
 import uvicorn
+import os
 
 app = FastAPI()
 
@@ -121,4 +119,7 @@ async def get_history():
 #         return {"error": str(e)}
     
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000)
+    # uvicorn.run("main:app", host="0.0.0.0", port=8000)
+    host = os.environ.get("HOST", "0.0.0.0")  # Default: 0.0.0.0
+    port = int(os.environ.get("PORT", 8000))  # Default: 8000
+    uvicorn.run("main:app", host=host, port=port)

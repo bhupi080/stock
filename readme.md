@@ -15,7 +15,7 @@ This project is a stock market data analysis task that fetches stock data, calcu
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone <repository_url>
+git clone https://github.com/bhupi080/stock.git
 cd <repository_name>
 ```
 
